@@ -1,5 +1,6 @@
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 export const useInView = (options = {}, once = true) => {
   const ref = useRef<HTMLElement | null>(null);

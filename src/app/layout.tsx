@@ -1,14 +1,15 @@
 import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import { ReactNode } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+//import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 
 const inter = Inter({ subsets: ['latin'] })
-const queryClient = new QueryClient();
+//const queryClient = new QueryClient();
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -31,7 +32,7 @@ export default function RootLayout({
         <meta property="og:image" content="/og-image.png" />
       </head>
       <body>
-        <QueryClientProvider client={queryClient}>
+        {/* <QueryClientProvider client={queryClient}> */}
           <TooltipProvider>
             <Toaster />
             <Sonner />
@@ -43,7 +44,6 @@ export default function RootLayout({
             ></script>
             <script type="module" src="/src/main.tsx"></script>
           </TooltipProvider>
-        </QueryClientProvider>
       </body>
     </html>
   );
